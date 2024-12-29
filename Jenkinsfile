@@ -11,20 +11,20 @@ pipeline {
         }
         stage ("Clone repo") {
             steps {
-                sh "git clone https://github.com/AhmedZnaidi/backenSpring.git"
+                sh "git clone https://github.com/AhmedZnaidi/backend.git"
             }
         }
         stage ("Generate backend image") {
             steps {
                 dir("backenSpring") {
                     sh "mvn clean install"
-                    sh "docker build -t backenSpring ."
+                    sh "docker build -t backend ."
                 }
             }
         }
         stage ("Run docker compose") {
             steps {
-                dir("backenSpring") {
+                dir("backend") {
                     sh "docker compose up -d"
                 }
             }
