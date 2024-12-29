@@ -28,5 +28,5 @@ services:
         - api_etudiant:/var/lib/mysql
 
     #liste des volumes
-    volumes:
-      api_etudiant:
+volumes:
+  api_etudiant:
